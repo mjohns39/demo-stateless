@@ -1,0 +1,8 @@
+server: 
+  port: 8761
+
+#By default, the registry will attempt to register itself, so you’ll need to disable that  
+eureka: 
+  client: 
+    registerWithEureka: false
+    fetchRegistry: false

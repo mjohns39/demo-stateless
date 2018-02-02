@@ -1,0 +1,44 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.10.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+group = 'com.demo.authserver'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+dependencyManagement {
+	imports {
+		//for config server
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:Edgware.RELEASE"
+	}
+}
+
+dependencies {
+	//dependency to register gateway with discovery
+	compile('org.springframework.cloud:spring-cloud-starter-eureka')
+	//dependency to register gateway with config server
+	compile('org.springframework.cloud:spring-cloud-starter-config')
+	//dependency needed to be able to automatically refresh config
+	compile('org.springframework.boot:spring-boot-starter-actuator')
+	//dependency to create auth server
+	compile('org.springframework.security.oauth:spring-security-oauth2')
+	//dependency to use jwts
+	compile('org.springframework.security:spring-security-jwt:1.0.8.RELEASE')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+}

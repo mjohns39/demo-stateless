@@ -1,0 +1,11 @@
+spring: 
+  application: 
+    name: gateway
+  cloud: 
+    config: 
+      uri: http://localhost:8888
+
+#disabled so we can test.  actuator endpoints are secure by default      
+management: 
+  security: 
+    enabled: false
