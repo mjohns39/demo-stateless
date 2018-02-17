@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <script>
+      var bowerDirectory = './bower_components';
+    </script>
+    <script src="./bower_components/bower-webfontloader/webfont.js"></script>
+    <script src="./bower_components/snap.svg/dist/snap.svg-min.js"></script>
+    <script src="./bower_components/underscore/underscore-min.js"></script>
+    <script src="./bower_components/js-sequence-diagrams/dist/sequence-diagram-min.js"></script>
+  </head>
+
+  <body>
+    <div id="diagram">Diagram will be placed here</div>
+    <script>
+      var d = Diagram.parse("A->B: Does something");
+      var options = {theme: 'simple'};
+      d.drawSVG('diagram', options);
+    </script>
+  </body>
+</html>
