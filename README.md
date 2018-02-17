@@ -1,5 +1,5 @@
 
-<script src="./bower_components/bower-webfontloader/webfont.js" > </script>
+<script src="https://github.com/mjohns39/demo-stateless/tree/master/bower_components/bower-webfontloader/webfont.js" > </script>
 
 
 
