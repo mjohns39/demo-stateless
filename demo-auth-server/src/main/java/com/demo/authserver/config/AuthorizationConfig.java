@@ -64,8 +64,8 @@ public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
     }
 
     @Override
-    public void configure(AuthorizationServerSecurityConfigurer oauthServer) throws Exception {
-        oauthServer
+    public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
+        security
                 // we're allowing access to the token only for clients with 'ROLE_TRUSTED_CLIENT' authority
                 .tokenKeyAccess("hasAuthority('ROLE_TRUSTED_CLIENT')")
                 .checkTokenAccess("hasAuthority('ROLE_TRUSTED_CLIENT')");
@@ -83,5 +83,6 @@ public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
                     .refreshTokenValiditySeconds(refreshTokenValiditySeconds)
                     .secret("secret")
                     .autoApprove(true);
+       
     }
 }
