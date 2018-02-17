@@ -31,13 +31,13 @@ Some finer details,
 4. Our Id token can be used to get other Access tokens for a period of 10 hours.  This allows us to have multiple APIs behind a single gateway and provide role based access to each of them.
 5. We also want to keep track of some information about our ID token.  But since we cannot modify our ID token without redoing Authentication, we will nest our ID token into another JWT.  Our **Wallet Token**.
 6. We have a couple of options to secure our *Wallet Token*.
-    * We can store it inside an HTTP Only Cookie.  Using this option would add overhead to requests from our UI, and put the burden of figuring out when to get a new access token on the gateway.  
-    * We can store it inside of Web Storage.  Using this option would decrease overhead on requests, but we would need to write code in the UI to determine when to refresh our access tokens.
+  * We can store it inside an HTTP Only Cookie.  Using this option would add overhead to requests from our UI, and put the burden of figuring out when to get a new access token on the gateway.  
+  * We can store it inside of Web Storage.  Using this option would decrease overhead on requests, but we would need to write code in the UI to determine when to refresh our access tokens.
 7. In Gateway, we will make a filter to determine when the last time an ID Token was "used".  If that time is greater than **30 minutes**.  We will require the user to re-authenticate and get a new ID token.  We can use our **Wallet Token** to track this information.  Effectively, this will mean that a User must always re-authenticate after 10 hours or after 30 minutes of inactivity.
 8. In Auth Server, we will add functionality to issue ID Tokens on successful authentication and access tokens on successful authorization.  As well as a filter to issue new access tokens when supplied with valid id tokens.
 9. In Gateway, we will add a filter to check the Origin and Referer Headers on HTTP requests to prevent possible CSRF Attacks.
-    * If we decide to use an HTTP Only cookie to store our Wallet Token we must also use a CSRF Token cookie to prevent CSRF Attacks.
-    * If we decide to keep our Wallet Token inside Web Storage, we don't need to use a CSRF Token cookie.  We only need to verify the Origin and Referer Headers.
+  * If we decide to use an HTTP Only cookie to store our Wallet Token we must also use a CSRF Token cookie to prevent CSRF Attacks.
+  * If we decide to keep our Wallet Token inside Web Storage, we don't need to use a CSRF Token cookie.  We only need to verify the Origin and Referer Headers.
 10. Since our **Wallet Token** is only going to be used server side, we can encrypt our wallet JWT using **JWE**.  For an extra layer of security.
 
 There a lot of other minor details we can specify, but for now, this is a good starting point for our project.
