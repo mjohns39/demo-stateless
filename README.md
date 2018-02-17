@@ -43,4 +43,4 @@ Some finer details,
 There a lot of other minor details we can specify, but for now, this is a good starting point for our project.
 ## Sequence diagrams
 
-![Basic Flow Diagram](./diagrams/BasicFlow.svg)
+![Basic Flow Diagram](./diagrams/BasicFlowStandardDraw.svg)
