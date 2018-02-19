@@ -4,3 +4,5 @@
 #custom
 /RemoteSystemsTempFiles/
 .DS_Store
+/bin/
+/build/

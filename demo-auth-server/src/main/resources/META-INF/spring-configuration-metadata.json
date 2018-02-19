@@ -1,0 +1,216 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.demo.authserver.config.properties.OAuthClientDetailsProperties",
+      "name": "oauth.client",
+      "type": "com.demo.authserver.config.properties.OAuthClientDetailsProperties"
+    },
+    {
+      "sourceType": "com.demo.authserver.config.properties.TokenProperties",
+      "name": "token",
+      "type": "com.demo.authserver.config.properties.TokenProperties"
+    },
+    {
+      "sourceType": "com.demo.authserver.config.properties.TokenProperties",
+      "name": "token.access-token",
+      "sourceMethod": "getAccessToken()",
+      "type": "com.demo.authserver.config.properties.TokenProperties$Token"
+    },
+    {
+      "sourceType": "com.demo.authserver.config.properties.AccessTokenProperties",
+      "name": "token.accessToken",
+      "type": "com.demo.authserver.config.properties.AccessTokenProperties"
+    },
+    {
+      "sourceType": "com.demo.authserver.config.properties.TokenProperties",
+      "name": "token.id-token",
+      "sourceMethod": "getIdToken()",
+      "type": "com.demo.authserver.config.properties.TokenProperties$Token"
+    },
+    {
+      "sourceType": "com.demo.authserver.config.properties.IdTokenProperties",
+      "name": "token.idToken",
+      "type": "com.demo.authserver.config.properties.IdTokenProperties"
+    },
+    {
+      "sourceType": "com.demo.authserver.config.properties.TokenProperties",
+      "name": "token.wallet-token",
+      "sourceMethod": "getWalletToken()",
+      "type": "com.demo.authserver.config.properties.TokenProperties$Token"
+    },
+    {
+      "sourceType": "com.demo.authserver.config.properties.WalletTokenProperties",
+      "name": "token.walletToken",
+      "type": "com.demo.authserver.config.properties.WalletTokenProperties"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.demo.authserver.config.properties.TokenProperties$Token",
+      "name": "token.access-token.audience",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.demo.authserver.config.properties.TokenProperties$Token",
+      "defaultValue": 0,
+      "name": "token.access-token.expiration-time",
+      "type": "java.lang.Long"
+    },
+    {
+      "sourceType": "com.demo.authserver.config.properties.TokenProperties$Token",
+      "name": "token.access-token.issuer",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.demo.authserver.config.properties.TokenProperties$Token",
+      "name": "token.access-token.key-alias",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.demo.authserver.config.properties.AccessTokenProperties",
+      "name": "token.accessToken.audience",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.demo.authserver.config.properties.AccessTokenProperties",
+      "defaultValue": 0,
+      "name": "token.accessToken.expiration-time",
+      "type": "java.lang.Long"
+    },
+    {
+      "sourceType": "com.demo.authserver.config.properties.AccessTokenProperties",
+      "name": "token.accessToken.issuer",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.demo.authserver.config.properties.AccessTokenProperties",
+      "name": "token.accessToken.key-alias",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.demo.authserver.config.properties.AccessTokenProperties",
+      "name": "token.accessToken.key-pass",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.demo.authserver.config.properties.AccessTokenProperties",
+      "name": "token.accessToken.key-store-location",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.demo.authserver.config.properties.TokenProperties$Token",
+      "name": "token.id-token.audience",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.demo.authserver.config.properties.TokenProperties$Token",
+      "defaultValue": 0,
+      "name": "token.id-token.expiration-time",
+      "type": "java.lang.Long"
+    },
+    {
+      "sourceType": "com.demo.authserver.config.properties.TokenProperties$Token",
+      "name": "token.id-token.issuer",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.demo.authserver.config.properties.TokenProperties$Token",
+      "name": "token.id-token.key-alias",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.demo.authserver.config.properties.IdTokenProperties",
+      "name": "token.idToken.audience",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.demo.authserver.config.properties.IdTokenProperties",
+      "defaultValue": 0,
+      "name": "token.idToken.expiration-time",
+      "type": "java.lang.Long"
+    },
+    {
+      "sourceType": "com.demo.authserver.config.properties.IdTokenProperties",
+      "name": "token.idToken.issuer",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.demo.authserver.config.properties.IdTokenProperties",
+      "name": "token.idToken.key-alias",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.demo.authserver.config.properties.IdTokenProperties",
+      "name": "token.idToken.key-pass",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.demo.authserver.config.properties.IdTokenProperties",
+      "name": "token.idToken.key-store-location",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.demo.authserver.config.properties.TokenProperties",
+      "name": "token.key-pass",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.demo.authserver.config.properties.TokenProperties",
+      "name": "token.key-store-location",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.demo.authserver.config.properties.TokenProperties$Token",
+      "name": "token.wallet-token.audience",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.demo.authserver.config.properties.TokenProperties$Token",
+      "defaultValue": 0,
+      "name": "token.wallet-token.expiration-time",
+      "type": "java.lang.Long"
+    },
+    {
+      "sourceType": "com.demo.authserver.config.properties.TokenProperties$Token",
+      "name": "token.wallet-token.issuer",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.demo.authserver.config.properties.TokenProperties$Token",
+      "name": "token.wallet-token.key-alias",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.demo.authserver.config.properties.WalletTokenProperties",
+      "name": "token.walletToken.audience",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.demo.authserver.config.properties.WalletTokenProperties",
+      "defaultValue": 0,
+      "name": "token.walletToken.expiration-time",
+      "type": "java.lang.Long"
+    },
+    {
+      "sourceType": "com.demo.authserver.config.properties.WalletTokenProperties",
+      "name": "token.walletToken.issuer",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.demo.authserver.config.properties.WalletTokenProperties",
+      "name": "token.walletToken.key-alias",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.demo.authserver.config.properties.WalletTokenProperties",
+      "name": "token.walletToken.key-pass",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.demo.authserver.config.properties.WalletTokenProperties",
+      "name": "token.walletToken.key-store-location",
+      "type": "java.lang.String"
+    }
+  ]
+}

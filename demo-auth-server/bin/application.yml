@@ -1,2 +1,33 @@
 server: 
   port: 8080
+  
+eureka:
+  client: 
+    registerWithEureka: false
+    fetchRegistry: false
+    
+token: 
+  keyStoreLocation: "auth/TokenStore.jks"
+  keyPass: mypass
+  idToken:
+    audience: openIdConnect
+    issuer: demo
+    expirationTime: 36000000 #10 hours
+    keyAlias: idToken
+  walletToken: 
+    audience: openIdConnect
+    issuer: demo
+    expirationTime: 1800000 #30 minutes
+    keyAlias: walletToken
+  accessToken: 
+    audience: openIdConnect
+    issuer: demo
+    expirationTime: 300000 #5 minutes
+    keyAlias: accessToken
+    
+spring: 
+  datasource: 
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:security_permission;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password: 

@@ -1,18 +1,35 @@
 buildscript {
 	ext {
 		springBootVersion = '1.5.10.RELEASE'
+		propDepsVersion = '0.0.9.RELEASE'
+		lombokVersion = '1.11'
 	}
 	repositories {
 		mavenCentral()
+		maven { url 'http://repo.spring.io/plugins-release' }
+		maven { url "https://plugins.gradle.org/m2/" }
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath "io.spring.gradle:propdeps-plugin:${propDepsVersion}"
+		classpath "io.franzbecker:gradle-lombok:${lombokVersion}"
 	}
 }
+
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
+apply plugin: 'io.franzbecker.gradle-lombok'
+apply plugin: 'propdeps'
+apply plugin: 'propdeps-maven'
+apply plugin: 'propdeps-idea'
+apply plugin: 'propdeps-eclipse'
+
+lombok {
+	version = "1.16.20"
+	sha256 = "3ca225ce3917eac8bf4b7d2186845df4e70dcdede356dca8537b6d78a535c91e"
+}
 
 group = 'com.demo.authserver'
 version = '0.0.1-SNAPSHOT'
@@ -37,8 +54,20 @@ dependencies {
 	//dependency needed to be able to automatically refresh config
 	compile('org.springframework.boot:spring-boot-starter-actuator')
 	//dependency to create auth server
-	compile('org.springframework.security.oauth:spring-security-oauth2')
-	//dependency to use jwts
+	compile('org.springframework.security.oauth:spring-security-oauth2')	
+	//dependency to use jwts for spring boot built in auth server
 	compile('org.springframework.security:spring-security-jwt:1.0.8.RELEASE')
+	//dependency to use jwts for custom auth server
+	compile('io.jsonwebtoken:jjwt:0.9.0')
+	//dependency to make custom auth rest controller endpoints
+	compile('org.springframework.boot:spring-boot-starter-web')
+	//dependencies to have a jdbc user details repo
+	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile("org.springframework.boot:spring-boot-starter-data-rest")
+	compile('com.h2database:h2')
+	
+	optional("org.springframework.boot:spring-boot-configuration-processor")
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
+
+compileJava.dependsOn(processResources)

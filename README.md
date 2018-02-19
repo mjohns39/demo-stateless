@@ -22,7 +22,7 @@ In this example,
 The flows are,
 1. Getting your Driver's license at the DMV is **Authentication**.  This is the most painful process and the result is an *ID Token*.
 2. When the bouncer checks your ID, he/she is checking the ID Token and issuing an *Access Token*; the stamp on your hand.  This is **Authorization**.
-3. When the bar tender checks the stamp on your hand, the Access Token, they are verifying that you are permitted to buy drinks; because they bar tender is very busy and it is easier and quicker to show the bar tender your hand rather than pull out your ID from your wallet.  This is **Access** and the bar tender is the *Resource API*.
+3. When the bar tender checks the stamp on your hand, the Access Token, they are verifying that you are permitted to buy drinks; because the bar tender is very busy and it is easier and quicker to show the bar tender your hand rather than pull out your ID from your wallet.  This is **Access** and the bar tender is the *Resource API*.
 
 Some finer details,
 1. In the real world, a driver's license is usually valid for years.  For our use case, this is too long.  So we want to make our **ID Token valid for 10 hours**.  
